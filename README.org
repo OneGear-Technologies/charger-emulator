@@ -1,0 +1,17 @@
+#+TITLE: Charger Emulator
+
+This is the program that emulates the charger. 
+
+test ip 0.0.0.0:8000
+id MUST be unique for each and every charger. The mechanism for this can be something like generating it from the hardware. The charger must be registered in the backend for this to work
+id used for testing: 100
+ A modified version with the same principles should be developed for the charger's firmware
+ 
+Locking:
+charger is locked by an API call to charge/lock with valid data.
+charge/get-stat/ is polled by the user's phone for now.
+charge/get-stat will be polled here as well, but that's not by design by just for testing.
+it is used to display the status, in the command line. It will be polled every 20 seconds to reduce server load. This can be improved by using message queues or something similar.
+
+THIS IS NOT THE FINAL PRODUCTION READY FIRMWARE FOR THE CHARGERS. THIS SIMPLY EMULATES WHAT AN ACTUAL CHARGER WOULD BE DOING.
+
